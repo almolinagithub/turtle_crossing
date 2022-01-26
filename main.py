@@ -22,14 +22,19 @@ tarta.setheading(90)
 screen.onkey(tarta.move_up, "Up")
 screen.onkey(tarta.move_down, "Down")
 
-#create the car
-car = Car()
+#create the car(s)
+
+for i in range(20):
+    car = Car()
+    car
+    print(car)
 
 #main loop
 while PLAYING:
     time.sleep(0.1)
     screen.update()
     screen.tracer(0)
+    car.move()
 
 screen.exitonclick()
 
