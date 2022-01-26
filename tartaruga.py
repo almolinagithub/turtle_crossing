@@ -14,5 +14,11 @@ class Tartaruga(Turtle):
     def move_down(self):
         self.back(10)
 
+    def move_right(self):
+        self.right(10)
+
+    def move_left(self):
+        self.left(10)
+
 
 
