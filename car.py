@@ -5,7 +5,7 @@ from turtle import Turtle
 r = random.randrange(0, 257, 10)
 g = random.randrange(0, 257, 10)
 b = random.randrange(0, 257, 10)
-car_step = random.randint(2,20)
+car_step = random.randint(2, 20)
 
 
 class Car(Turtle):

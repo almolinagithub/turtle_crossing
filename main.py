@@ -5,6 +5,7 @@ from car import Car
 from tartaruga import Tartaruga
 
 PLAYING = True
+cars = []
 
 #create the screen
 screen = Screen()
@@ -24,17 +25,18 @@ screen.onkey(tarta.move_down, "Down")
 
 #create the car(s)
 
-for i in range(20):
+for i in range(3):
     car = Car()
-    car
-    print(car)
+    cars.append(car)
 
 #main loop
 while PLAYING:
     time.sleep(0.1)
     screen.update()
     screen.tracer(0)
-    car.move()
+    for car in cars:
+        car.move()
+
 
 screen.exitonclick()
 
