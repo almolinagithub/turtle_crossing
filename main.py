@@ -1,45 +1,31 @@
-from turtle import Screen
-import random
+
+import turtle
 import time
-from car import Car
-from tartaruga import Tartaruga
+from player import  Player
+from car_manager import Car_Manager
+
+screen = turtle.Screen()
+screen.screensize(600, 600)
+screen.title("Turtle crossing game")
+screen.listen()
+screen.tracer(0)
 
 PLAYING = True
-cars = []
 
-#create the screen
-screen = Screen()
-screen.title("Turtle crossing")
-screen.screensize(600, 600)
-screen.tracer(0)
-screen.listen()
+#create the player
+player = Player()
 
-#create the turtle
-tarta = Tartaruga()
-tarta.setpos(0, -300)
-tarta.setheading(90)
+#move the player ahead
+screen.onkey(player.move_ahead, "Up")
 
-#event handler to move the turtle
-screen.onkey(tarta.move_up, "Up")
-screen.onkey(tarta.move_down, "Down")
+#create the car manager
+car_manager = Car_Manager()
 
-#create the car(s)
-car = Car()
-for i in range(10):
-    car = Car()
-    cars.append(car)
-
-#main loop
 while PLAYING:
-    time.sleep(0.04)
+    time.sleep(0.1)
+    car_manager.create_car()
+    car_manager.move_car()
     screen.update()
-    screen.tracer(0)
-    for car in cars:
-        car.move()
-    type(cars)
-
-
-
 
 screen.exitonclick()
 
